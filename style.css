@@ -42,7 +42,7 @@ header{
 }
 a{
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 0.9em;
 }
 ul {
   list-style-type: none;
@@ -60,7 +60,7 @@ button{
     background-color: var(--bg-color);
     color: var(--accent-color);
     border: 1px solid var(--accent-color);
-    font-size: 0.8em;
+    font-size: 0.7em;
     border-radius: 15px;
     padding: 2%;
 }
@@ -76,6 +76,10 @@ button{
 }
 img{
     width:100%;
+}
+.stats{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
 }
 .ending{
      display: grid;
@@ -186,7 +190,7 @@ img{
 
 .picture_frame img {
   flex: 0 0 auto;
-  height: 300px; 
+  height: 250px; 
   width: auto;
   scroll-snap-align: start;
   border-radius: 10px;
@@ -199,6 +203,22 @@ img{
   scroll-snap-type: x mandatory;
   padding: 1rem;
   -webkit-overflow-scrolling: touch;
+}
+b{  
+  position: relative;
+  z-index: 1;
+}
+b::after {
+  content: " ";
+  position: absolute;
+  left: 0rem;
+  top: 60%; 
+  width: 100%;
+  height: 30%;
+  background-color:#3F88C5;
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 2px;
 }
 
 .slide {
@@ -234,8 +254,9 @@ img{
     width: 60%;
 }
 .slightly_too_big{
-    width: 50%;
-    margin-left: 25%;
+    width: 80%;
+    margin-left: 5%;
+    margin-top: 10%;
 }
 .icon_logo{
     width: 20%;
@@ -253,16 +274,148 @@ img{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+.profile-stats {
+ 
+      display: grid;
+      grid-template-columns: 1fr ;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 2rem;
+      margin:2%;
+      border-radius: 15px;
+      gap: 4rem;
+      align-items: center;
+      flex-wrap: wrap;
+
+}
+
+.profile-image img {
+  width: 200px;
+  border-radius: 25px;
+  background: #7264D7;
+}
+
+.stats-container {
+  flex: 1;
+}
+
+.stats-container h2 {
+  font-size: 1.8em;
+  color: #ffbdbd;
+  border-bottom: 2px solid #ffbdbd;
+  margin-bottom: 1rem;
+}
+
+.stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  font-size: 1.1em;
+  border-bottom: none;
+}
+
+.stats-list li img {
+  width: 32px;
+  height: 32px;
+}
+
+.stats-list .bar {
+  flex: 1;
+  height: 10px;
+  background: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 0.5rem;
+}
+
+.stats-list .fill {
+  height: 100%;
+  background: #00bfff;
+  border-radius: 5px;
+}
+.zzz_profile_img{
+  margin-left:15%;
+}
+
+.score {
+  min-width: 50px;
+  text-align: right;
+  font-weight: bold;
+}
+.personality_traits{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color:#7264D7;
+  border-radius: 15px;
+  padding-top: 5%;
+}
+.zzz_text{
+  font-size: 0.7em;
+}
+.profile_icon_logo{
+  width:60%;
+}
+.technology_headline{
+      margin-bottom: 2%;
+      padding-top: 1%;
+      margin-left: 20%;
+    }
+.hide{
+  opacity: 0;
+}
+.zzz_profile{
+    background: #7264D7;
+    border-radius: 15px;
+    width: 100%;
+}
+.profile-image{
+  background: #7264D7;
+  border-radius: 25px;
+}
+.zzz_info_card{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.zzz_info_card > img{
+  width:80%;
+}
+.about{
+      margin-top: 20%;
+    }
+.p_too_far{
+      margin-bottom: 20%;
+      max-width:80%;
+      margin-left:10%;
+      text-align: center;
+}
+
 blockquote{
         width: 60%;
         font-size: 1.3em;
     }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 700px) {
     .main_profile_image{
         top: 40px;
     }
     .icon_list{
         margin-top: 10%;
+    }
+    .groupMembers{
+      font-size: 1em;
+      text-decoration:underline;
+    }
+    .zzz_info_card > img{
+      width: 40%;
+    }
+    .zzz_text{
+      font-size: 1.4em;
     }
     h1{
         font-size: 3em;
@@ -274,34 +427,137 @@ blockquote{
     h2, h3{
         font-size: 2em;
     }
+    h2{
+      text-align: center;
+      margin-bottom: 10%;
+    }
+    .technology_headline{
+      margin-bottom: 2%;
+      padding-top: 1%;
+    }
     p, .slide p{
         font-size: 1.4em;
     }
-    .slide{
-        flex: 0 0 40%;
-    }
+    .slide {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    box-shadow: none;
+  }
+
+  .project_slideshow .slide:nth-child(even) {
+    flex-direction: row-reverse;
+  }
     .picture_frame img{
-        height: 300px;
+        height: 400px;
+    }
+    .project_slideshow{
+      display: grid;
+      grid-template-columns: 1fr;
     }
     .slightly_too_big{
         width:20%;
         margin-left: 40%;
     }
+    .profile-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 2rem;
+      margin:2%;
+      border-radius: 15px;
+      gap: 4rem;
+      align-items: center;
+      flex-wrap: wrap;
+}
+.hide{
+  opacity: 0;
+}
+.zzz_profile_img{
+  margin-left:30%;
+}
+.zzz_info_card{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top:-40%;
+}
+h4{
+  font-size: 1.5em;
+}
+.personality_traits{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color:#7264D7;
+  border-radius: 15px;
+  padding-top: 5%;
+}
+/*
+.zzz_stats{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 2rem;
+      margin:2%;
+      margin-bottom: 10%;
+      border-radius: 15px;
+      gap: 13rem;
+      align-items: center;
+      flex-wrap: wrap;
+}*/
+
+.zzz_profile{
+    background: #7264D7;
+    border-radius: 15px;
+    width: 100%;
+}
+.profile-image{
+  background: #7264D7;
+  border-radius: 25px;
+}
+.profile-image img {
+  width: 400px;
+}
+.stats-container{
+  margin-right:5%;
+}
+    .about{
+      margin-top: 10%;
+    }
+    .p_too_far{
+      margin-top: -5%;
+      margin-bottom: 5%;
+      max-width:80%;
+      margin-left:10%;
+      text-align: center;
+    }
     .aboutMe{
         font-size: 3em;
         padding-top: 10%;
     }
+    
+    .slide img{
+      width: 70%;
+    }
+    .bw{
+      top: 200px;
+      width: 25%;
+    }
     li{
         line-height: 2em;
-        font-size: 1.1em;
+        font-size: 1.3em;
         margin-bottom: 5%;
     }
     button{
-        font-size: 1.2em;
+        font-size: 1em;
         padding: 1%;
         margin-bottom: 1%;
     }
     img{
         width: 70%;
+    }
+    a{
+      font-size: 1.2em;
     }
 }
