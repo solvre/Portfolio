@@ -434,6 +434,7 @@ blockquote{
     .technology_headline{
       margin-bottom: 2%;
       padding-top: 1%;
+      margin-left:0%;
     }
     p, .slide p{
         font-size: 1.4em;
