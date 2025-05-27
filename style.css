@@ -373,7 +373,6 @@ b::after {
 .zzz_profile{
     background: #7264D7;
     border-radius: 15px;
-    width: 100%;
 }
 .profile-image{
   background: #7264D7;
@@ -393,7 +392,7 @@ b::after {
       margin-bottom: 20%;
       max-width:80%;
       margin-left:10%;
-      text-align: center;
+      text-align: left;
 }
 
 blockquote{
@@ -512,7 +511,8 @@ h4{
 .zzz_profile{
     background: #7264D7;
     border-radius: 15px;
-    width: 100%;
+     max-width:85%;
+    margin-left:7%;
 }
 .profile-image{
   background: #7264D7;
